@@ -1,4 +1,4 @@
-# 🚗 Garagem Virtual (Mão na Roda)
+# Garagem Virtual
 
 > **"O seu assistente automotivo inteligente."**
 
@@ -58,4 +58,4 @@ Sistema web moderno, responsivo e intuitivo desenvolvido para o gerenciamento co
 
 ## 🌐 Aplicativo publicado
 
-[Acesse o Mão na Roda no GitHub Pages](https://debora-albuquerque.github.io/garagem_virtual/).
+[Acesse a Garagem Virtual no GitHub Pages](https://debora-albuquerque.github.io/garagem_virtual/).

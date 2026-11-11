@@ -938,7 +938,7 @@ export default function App() {
   const [aiChatMessages, setAiChatMessages] = useState<Array<{ sender: 'user' | 'assistant'; text: string; time: string }>>([
     {
       sender: 'assistant',
-      text: 'Olá! Sou o Assistente Técnico Inteligente Mão na Roda. Posso te ajudar a consultar dados técnicos, indicar especificações de óleo, fluidos e calibragem dos principais modelos ou orientar sobre manutenções preventivas.',
+      text: 'Olá! Sou o Assistente Técnico Inteligente Garagem Virtual. Posso te ajudar a consultar dados técnicos, indicar especificações de óleo, fluidos e calibragem dos principais modelos ou orientar sobre manutenções preventivas.',
       time: 'Agora',
     },
   ]);
@@ -1338,7 +1338,7 @@ export default function App() {
         ' A calibragem dos pneus deve ser feita a cada 15 dias, sempre com os pneus frios (rodados menos de 3 km). A pressão recomendada para o seu modelo é de 32 PSI em uso normal e 34 PSI quando estiver com lotação máxima de passageiros e bagagens.';
     } else {
       reply +=
-        ' Essa é uma dúvida técnica importante. Mantenha os registros de manutenção e revisões sempre atualizados aqui no Mão na Roda. O acompanhamento rigoroso do hodômetro e das datas de troca de fluidos evita surpresas na estrada e preserva até 20% a mais o valor de revenda do seu veículo.';
+        ' Essa é uma dúvida técnica importante. Mantenha os registros de manutenção e revisões sempre atualizados aqui na Garagem Virtual. O acompanhamento rigoroso do hodômetro e das datas de troca de fluidos evita surpresas na estrada e preserva até 20% a mais o valor de revenda do seu veículo.';
     }
 
     setAiChatMessages((prev) => [
@@ -1355,7 +1355,7 @@ export default function App() {
   // Export / Backup handler
   const handleExportData = () => {
     const dataToExport = {
-      app: 'Mão na Roda',
+      app: 'Garagem Virtual',
       exportedAt: new Date().toISOString(),
       vehicle,
       reminders,
@@ -1408,7 +1408,7 @@ export default function App() {
           </div>
           <div>
             <span className="font-extrabold text-base tracking-tight text-white block leading-none">
-              Mão na Roda
+              Garagem Virtual
             </span>
             <span className="text-[10px] text-blue-400 font-medium">Assistente Inteligente</span>
           </div>
@@ -1442,7 +1442,7 @@ export default function App() {
               </div>
               <div>
                 <h1 className="text-xl font-extrabold tracking-tight text-white leading-tight">
-                  Mão na Roda
+                  Garagem Virtual
                 </h1>
                 <p className="text-xs text-blue-400 font-medium">Assistente Automotivo</p>
               </div>
@@ -2969,7 +2969,7 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white">
-                        Assistente Mecânico Mão na Roda
+                        Assistente Mecânico Garagem Virtual
                       </h4>
                       <p className="text-[11px] text-blue-400">
                         Tire dúvidas sobre barulhos, sintomas, troca de correia, óleo e revisões
@@ -3080,7 +3080,7 @@ export default function App() {
                     </div>
                     <div>
                       <h3 className="text-xl font-extrabold text-white">
-                        Dossiê Automotivo Certificado Mão na Roda
+                        Dossiê Automotivo Certificado Garagem Virtual
                       </h3>
                       <p className="text-xs text-blue-400 font-medium">
                         Histórico completo de procedência, revisões, abastecimentos e customizações
@@ -3184,7 +3184,7 @@ export default function App() {
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-5 h-5 text-blue-400" />
                     <span>
-                      Dossiê gerado com tecnologia Mão na Roda. O valor do carro com histórico é em média
+                      Dossiê gerado com tecnologia Garagem Virtual. O valor do carro com histórico é em média
                       15% superior no mercado.
                     </span>
                   </div>
