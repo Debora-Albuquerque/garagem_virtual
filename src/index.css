@@ -7,6 +7,12 @@
     color: #e2e8f0;
     overflow-x: hidden;
   }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+  }
 }
 
 /* Custom scrollbars */

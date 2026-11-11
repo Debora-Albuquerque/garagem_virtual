@@ -159,184 +159,22 @@ export interface VehicleSpecData {
   preventiveTips: string[];
 }
 
-// --- INITIAL MOCK DATA ---
+// --- EMPTY INITIAL PROFILE ---
 
 const DEFAULT_VEHICLE: VehicleProfile = {
-  id: 'veh_01',
-  brand: 'Honda',
-  model: 'Civic Touring 1.5 Turbo',
-  year: '2021/2021',
-  plate: 'BRA-2E19',
-  currentMileage: 46250,
-  acquisitionDate: '2022-04-18',
-  version: '1.5 VTEC Turbo 16V Gasolina CVT',
-  color: 'Preto Cristal Perolizado',
-  chassis: '93HFC1640NZ184920',
-  fuelType: 'Gasolina',
-  tankCapacity: 56,
+  id: 'vehicle',
+  brand: '',
+  model: '',
+  year: '',
+  plate: '',
+  currentMileage: 0,
+  acquisitionDate: '',
+  version: '',
+  color: '',
+  chassis: '',
+  fuelType: 'Flex',
+  tankCapacity: 0,
 };
-
-const DEFAULT_REMINDERS: ReminderItem[] = [
-  {
-    id: 'rem_1',
-    title: 'Licenciamento Anual (Final 9)',
-    dueDate: '2026-11-30',
-    category: 'Licenciamento',
-    amount: 160.22,
-    isPaid: false,
-    notes: 'Realizar emissão do CRLV-e pelo Detran',
-  },
-  {
-    id: 'rem_2',
-    title: 'Renovação Seguro Porto Seguro Auto',
-    dueDate: '2026-12-15',
-    category: 'Seguro',
-    amount: 3450.0,
-    isPaid: false,
-    notes: 'Apólice #82910-A. Contato corretora: (11) 98765-4321',
-  },
-  {
-    id: 'rem_3',
-    title: 'IPVA 2027 (Cota Única / 1ª Parcela)',
-    dueDate: '2027-01-18',
-    category: 'IPVA',
-    amount: 3890.0,
-    isPaid: false,
-    notes: 'Desconto de 3% para pagamento em cota única',
-  },
-  {
-    id: 'rem_4',
-    title: 'Alinhamento & Balanceamento 3D',
-    dueDate: '2026-11-25',
-    category: 'Manutenção',
-    amount: 180.0,
-    isPaid: false,
-    notes: 'Recomendado a cada 10.000 km ou 6 meses',
-  },
-];
-
-const DEFAULT_FUELS: FuelLog[] = [
-  {
-    id: 'fuel_1',
-    date: '2026-10-28',
-    gasStation: 'Posto Shell V-Power',
-    fuelType: 'Gasolina Aditivada',
-    totalPrice: 285.5,
-    liters: 47.74,
-    pricePerLiter: 5.98,
-    mileage: 45710,
-    projectedRange: 610,
-    isFullTank: true,
-    notes: 'Abastecimento na volta da viagem pela Rodovia dos Bandeirantes.',
-  },
-  {
-    id: 'fuel_2',
-    date: '2026-11-08',
-    gasStation: 'Posto Ipiranga Rota',
-    fuelType: 'Gasolina Aditivada',
-    totalPrice: 294.2,
-    liters: 49.12,
-    pricePerLiter: 5.99,
-    mileage: 46250,
-    projectedRange: 625,
-    isFullTank: true,
-    notes: 'Tanque cheio. Uso urbano e rodoviário.',
-  },
-];
-
-const DEFAULT_MAINTENANCES: MaintenanceLog[] = [
-  {
-    id: 'maint_1',
-    date: '2026-06-12',
-    mileage: 40150,
-    workshop: 'Concessionária Honda Daitan',
-    category: 'Troca de Óleo e Filtros',
-    services: 'Revisão dos 40.000 km. Troca de óleo 0W-20 sintético, substituição do filtro de óleo, filtro de ar do motor e filtro de cabine com higienização do ar-condicionado.',
-    partsReplaced: 'Óleo Honda 0W-20 Pro Honda (3.5L), Filtro Óleo 15400-RTA-003, Filtro Ar Motor 17220-5AA-A00, Filtro Cabine AC.',
-    partsCost: 395.0,
-    laborCost: 280.0,
-    totalCost: 675.0,
-    invoiceNumber: 'NF-e 0048192',
-    warrantyPeriod: '12 meses ou 10.000 km nas peças genuínas Honda',
-    notes: 'Check-up de 27 itens sem apontamentos. Bateria e pastilhas aprovadas.',
-  },
-  {
-    id: 'maint_2',
-    date: '2026-09-04',
-    mileage: 43800,
-    workshop: 'Centro Automotivo Bosch Car Service',
-    category: 'Freios e Pneus',
-    services: 'Substituição das pastilhas de freio dianteiras de cerâmica e sangria com fluido de freio DOT 4 LV.',
-    partsReplaced: 'Jogo de pastilhas dianteiras Brembo P28077N, Fluido de Freio Bosch DOT 4 LV (1L).',
-    partsCost: 460.0,
-    laborCost: 190.0,
-    totalCost: 650.0,
-    invoiceNumber: 'NF-e 019283',
-    warrantyPeriod: '6 meses ou 10.000 km',
-    notes: 'Discos dianteiros retificados dentro da espessura limite de tolerância.',
-  },
-];
-
-const DEFAULT_SCHEDULED: ScheduledService[] = [
-  {
-    id: 'sched_1',
-    title: 'Revisão dos 50.000 km / 5 Anos',
-    targetMileage: 50000,
-    targetDate: '2027-03-15',
-    category: 'Preventiva',
-    estimatedCost: 890.0,
-    priority: 'Alta',
-    isCompleted: false,
-    notes: 'Troca de óleo do motor, filtro de combustível e inspeção da correia e velas.',
-  },
-  {
-    id: 'sched_2',
-    title: 'Troca do Fluido da Transmissão CVT',
-    targetMileage: 50000,
-    targetDate: '2027-04-10',
-    category: 'Câmbio',
-    estimatedCost: 750.0,
-    priority: 'Média',
-    isCompleted: false,
-    notes: 'Fluido genuíno Honda HCF-2 para câmbio CVT.',
-  },
-  {
-    id: 'sched_3',
-    title: 'Rodízio de Pneus e Geometria 3D',
-    targetMileage: 48000,
-    targetDate: '2026-12-10',
-    category: 'Freios e Pneus',
-    estimatedCost: 160.0,
-    priority: 'Normal',
-    isCompleted: false,
-    notes: 'Avaliar desgaste da banda de rodagem dos pneus Michelin Primacy 4.',
-  },
-];
-
-const DEFAULT_MODIFICATIONS: VehicleModification[] = [
-  {
-    id: 'mod_1',
-    date: '2025-05-20',
-    category: 'Conforto & Interior',
-    title: 'Película Solar Nanocerâmica Alta Performance',
-    brand: '3M Crystalline',
-    cost: 1450.0,
-    workshop: 'Insulfilm Premium Studio',
-    warrantyTerms: '10 anos de garantia de fábrica contra bolhas e desbotamento térmico',
-    description: 'Instalação em todos os vidros e para-brisa frontal transparente (70% de visibilidade e 97% de rejeição de raios infravermelhos).',
-  },
-  {
-    id: 'mod_2',
-    date: '2025-11-14',
-    category: 'Performance',
-    title: 'Filtro de Ar Inbox de Alto Fluxo Lavável',
-    brand: 'K&N Engineering',
-    cost: 490.0,
-    workshop: 'Instalação Própria / Garagem',
-    warrantyTerms: 'Garantia limitada de 1 milhão de milhas pelo fabricante',
-    description: 'Filtro de ar esportivo em algodão cirúrgico encaixado diretamente na caixa de ar original sem alterações estruturais.',
-  },
-];
 
 // --- INTERNAL AUTOMOTIVE INTELLIGENCE DATABASE ---
 
@@ -935,27 +773,27 @@ export default function App() {
 
   const [reminders, setReminders] = useState<ReminderItem[]>(() => {
     const saved = localStorage.getItem('mnr_reminders');
-    return saved ? JSON.parse(saved) : DEFAULT_REMINDERS;
+    return saved ? JSON.parse(saved) : [];
   });
 
   const [fuelLogs, setFuelLogs] = useState<FuelLog[]>(() => {
     const saved = localStorage.getItem('mnr_fuel_logs');
-    return saved ? JSON.parse(saved) : DEFAULT_FUELS;
+    return saved ? JSON.parse(saved) : [];
   });
 
   const [maintenances, setMaintenances] = useState<MaintenanceLog[]>(() => {
     const saved = localStorage.getItem('mnr_maintenances');
-    return saved ? JSON.parse(saved) : DEFAULT_MAINTENANCES;
+    return saved ? JSON.parse(saved) : [];
   });
 
   const [scheduledServices, setScheduledServices] = useState<ScheduledService[]>(() => {
     const saved = localStorage.getItem('mnr_scheduled');
-    return saved ? JSON.parse(saved) : DEFAULT_SCHEDULED;
+    return saved ? JSON.parse(saved) : [];
   });
 
   const [modifications, setModifications] = useState<VehicleModification[]>(() => {
     const saved = localStorage.getItem('mnr_modifications');
-    return saved ? JSON.parse(saved) : DEFAULT_MODIFICATIONS;
+    return saved ? JSON.parse(saved) : [];
   });
 
   // Sync state to localStorage
@@ -994,6 +832,9 @@ export default function App() {
 
   // Forms temporary states
   const [vehicleForm, setVehicleForm] = useState<VehicleProfile>(vehicle);
+  const [vehicleMileageInput, setVehicleMileageInput] = useState(
+    vehicle.currentMileage ? vehicle.currentMileage.toString() : ''
+  );
   const [newReminder, setNewReminder] = useState<Partial<ReminderItem>>({
     title: '',
     dueDate: '',
@@ -1014,12 +855,12 @@ export default function App() {
     isFullTank: boolean;
     notes: string;
   }>({
-    date: new Date().toISOString().split('T')[0],
-    gasStation: 'Posto Shell',
+    date: '',
+    gasStation: '',
     fuelType: 'Gasolina Aditivada',
     totalPrice: '',
     liters: '',
-    mileage: vehicle.currentMileage.toString(),
+    mileage: '',
     projectedRange: '',
     isFullTank: true,
     notes: '',
@@ -1038,8 +879,8 @@ export default function App() {
     warrantyPeriod: string;
     notes: string;
   }>({
-    date: new Date().toISOString().split('T')[0],
-    mileage: vehicle.currentMileage.toString(),
+    date: '',
+    mileage: '',
     workshop: '',
     category: 'Preventiva',
     services: '',
@@ -1047,7 +888,7 @@ export default function App() {
     partsCost: '',
     laborCost: '',
     invoiceNumber: '',
-    warrantyPeriod: '90 dias ou 5.000 km',
+    warrantyPeriod: '',
     notes: '',
   });
 
@@ -1061,7 +902,7 @@ export default function App() {
     notes: string;
   }>({
     title: '',
-    targetMileage: (vehicle.currentMileage + 5000).toString(),
+    targetMileage: '',
     targetDate: '',
     category: 'Preventiva',
     estimatedCost: '',
@@ -1079,23 +920,21 @@ export default function App() {
     warrantyTerms: string;
     description: string;
   }>({
-    date: new Date().toISOString().split('T')[0],
+    date: '',
     category: 'Conforto & Interior',
     title: '',
     brand: '',
     cost: '',
     workshop: '',
-    warrantyTerms: '1 ano',
+    warrantyTerms: '',
     description: '',
   });
 
   // Technical Consultation States (Internal Intelligent Knowledge Base)
-  const [modelQueryInput, setModelQueryInput] = useState('Chevrolet Onix');
-  const [yearEngineQueryInput, setYearEngineQueryInput] = useState('2022 1.0 Turbo Flex');
-  const [isOfficialHomologated, setIsOfficialHomologated] = useState(true);
-  const [technicalQueryResult, setTechnicalQueryResult] = useState<VehicleSpecData>(() => {
-    return lookupVehicleTechnicalData('Chevrolet Onix', '2022 1.0 Turbo Flex').spec;
-  });
+  const [modelQueryInput, setModelQueryInput] = useState('');
+  const [yearEngineQueryInput, setYearEngineQueryInput] = useState('');
+  const [isOfficialHomologated, setIsOfficialHomologated] = useState(false);
+  const [technicalQueryResult, setTechnicalQueryResult] = useState<VehicleSpecData | null>(null);
   const [aiChatMessages, setAiChatMessages] = useState<Array<{ sender: 'user' | 'assistant'; text: string; time: string }>>([
     {
       sender: 'assistant',
@@ -1139,8 +978,8 @@ export default function App() {
       }
     });
 
-    const averageKmL = litersDiffSum > 0 ? (kmDiffSum / litersDiffSum).toFixed(2) : '11.8';
-    const averagePricePerLiter = totalLiters > 0 ? (totalSpent / totalLiters).toFixed(2) : '5.98';
+    const averageKmL = litersDiffSum > 0 ? (kmDiffSum / litersDiffSum).toFixed(2) : '0.00';
+    const averagePricePerLiter = totalLiters > 0 ? (totalSpent / totalLiters).toFixed(2) : '0.00';
     const totalKmTracked =
       sortedFuelLogs.length > 1
         ? sortedFuelLogs[sortedFuelLogs.length - 1].mileage - sortedFuelLogs[0].mileage
@@ -1186,8 +1025,17 @@ export default function App() {
 
   const handleSaveVehicleProfile = (e: React.FormEvent) => {
     e.preventDefault();
-    setVehicle(vehicleForm);
+    setVehicle({
+      ...vehicleForm,
+      currentMileage: parseInt(vehicleMileageInput, 10) || 0,
+    });
     setIsEditVehicleModalOpen(false);
+  };
+
+  const handleOpenVehicleEditor = () => {
+    setVehicleForm(vehicle);
+    setVehicleMileageInput(vehicle.currentMileage ? vehicle.currentMileage.toString() : '');
+    setIsEditVehicleModalOpen(true);
   };
 
   const handleAddFuel = (e: React.FormEvent) => {
@@ -1220,12 +1068,12 @@ export default function App() {
 
     setIsFuelModalOpen(false);
     setNewFuel({
-      date: new Date().toISOString().split('T')[0],
-      gasStation: 'Posto Shell',
+      date: '',
+      gasStation: '',
       fuelType: 'Gasolina Aditivada',
       totalPrice: '',
       liters: '',
-      mileage: (mileage + 400).toString(),
+      mileage: '',
       projectedRange: '',
       isFullTank: true,
       notes: '',
@@ -1249,14 +1097,14 @@ export default function App() {
       id: 'maint_' + Date.now(),
       date: newMaint.date,
       mileage,
-      workshop: newMaint.workshop || 'Oficina Mecânica Especializada',
+      workshop: newMaint.workshop,
       category: newMaint.category,
       services: newMaint.services,
       partsReplaced: newMaint.partsReplaced,
       partsCost,
       laborCost,
       totalCost,
-      invoiceNumber: newMaint.invoiceNumber || `NF-e ${Math.floor(10000 + Math.random() * 90000)}`,
+      invoiceNumber: newMaint.invoiceNumber,
       warrantyPeriod: newMaint.warrantyPeriod,
       notes: newMaint.notes,
     };
@@ -1269,8 +1117,8 @@ export default function App() {
 
     setIsMaintModalOpen(false);
     setNewMaint({
-      date: new Date().toISOString().split('T')[0],
-      mileage: vehicle.currentMileage.toString(),
+      date: '',
+      mileage: '',
       workshop: '',
       category: 'Preventiva',
       services: '',
@@ -1278,7 +1126,7 @@ export default function App() {
       partsCost: '',
       laborCost: '',
       invoiceNumber: '',
-      warrantyPeriod: '90 dias ou 5.000 km',
+      warrantyPeriod: '',
       notes: '',
     });
   };
@@ -1307,7 +1155,7 @@ export default function App() {
     setIsSchedModalOpen(false);
     setNewSched({
       title: '',
-      targetMileage: (vehicle.currentMileage + 5000).toString(),
+      targetMileage: '',
       targetDate: '',
       category: 'Preventiva',
       estimatedCost: '',
@@ -1329,15 +1177,15 @@ export default function App() {
   const handleConvertScheduledToMaintenance = (sched: ScheduledService) => {
     setNewMaint({
       date: new Date().toISOString().split('T')[0],
-      mileage: vehicle.currentMileage.toString(),
+      mileage: vehicle.currentMileage ? vehicle.currentMileage.toString() : '',
       workshop: '',
       category: 'Preventiva',
       services: sched.title,
       partsReplaced: '',
       partsCost: sched.estimatedCost ? (sched.estimatedCost * 0.6).toFixed(2) : '',
       laborCost: sched.estimatedCost ? (sched.estimatedCost * 0.4).toFixed(2) : '',
-      invoiceNumber: `NF-e ${Math.floor(10000 + Math.random() * 90000)}`,
-      warrantyPeriod: '90 dias ou 5.000 km',
+      invoiceNumber: '',
+      warrantyPeriod: '',
       notes: sched.notes || '',
     });
     // Mark as completed
@@ -1363,13 +1211,13 @@ export default function App() {
     setModifications([entry, ...modifications]);
     setIsModModalOpen(false);
     setNewMod({
-      date: new Date().toISOString().split('T')[0],
+      date: '',
       category: 'Conforto & Interior',
       title: '',
       brand: '',
       cost: '',
       workshop: '',
-      warrantyTerms: '1 ano',
+      warrantyTerms: '',
       description: '',
     });
   };
@@ -1445,7 +1293,6 @@ export default function App() {
       brand: spec.brand,
       model: spec.model,
       year: spec.yearModel,
-      plate: spec.plateOrChassis,
       version: spec.engine,
       tankCapacity: spec.tankCapacity,
     }));
@@ -1568,7 +1415,7 @@ export default function App() {
         </div>
         <div className="flex items-center space-x-2">
           <div className="bg-[#101b36] border border-blue-500/30 px-2.5 py-1 rounded text-xs font-mono font-bold text-blue-300">
-            {vehicle.plate}
+            {vehicle.plate || 'PLACA'}
           </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -1613,10 +1460,9 @@ export default function App() {
               </span>
               <button
                 onClick={() => {
-                  setVehicleForm(vehicle);
-                  setIsEditVehicleModalOpen(true);
-                  setMobileMenuOpen(false);
-                }}
+                    handleOpenVehicleEditor();
+                    setMobileMenuOpen(false);
+                  }}
                 className="text-blue-400 hover:text-blue-300 flex items-center gap-1 transition-colors"
                 title="Editar dados do carro"
               >
@@ -1624,11 +1470,13 @@ export default function App() {
                 <span>Editar</span>
               </button>
             </div>
-            <div className="font-bold text-sm text-white truncate">{vehicle.model}</div>
+            <div className="font-bold text-sm text-white truncate">
+              {vehicle.model || 'Cadastre seu veículo'}
+            </div>
             <div className="flex items-center justify-between mt-2 pt-2 border-t border-blue-900/40 text-xs">
               <div className="flex items-center gap-1.5 text-blue-300 font-mono font-semibold">
                 <span className="inline-block w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                {vehicle.plate}
+                {vehicle.plate || '—'}
               </div>
               <div className="text-slate-300 font-medium">{formatKm(vehicle.currentMileage)}</div>
             </div>
@@ -1807,7 +1655,8 @@ export default function App() {
               {activeTab === 'report' && 'Dossiê do Veículo & Gerenciamento de Backup'}
             </h2>
             <p className="text-xs text-slate-400">
-              {vehicle.model} • {vehicle.year} • {formatKm(vehicle.currentMileage)}
+              {vehicle.model || 'Cadastre seu veículo'}
+              {vehicle.year && ` • ${vehicle.year}`} • {formatKm(vehicle.currentMileage)}
             </p>
           </div>
 
@@ -1818,14 +1667,13 @@ export default function App() {
                 <span>BRASIL</span>
               </div>
               <div className="px-3 py-0.5 font-mono font-bold text-sm text-blue-200 tracking-wider">
-                {vehicle.plate}
+                {vehicle.plate || '—'}
               </div>
             </div>
 
             <button
               onClick={() => {
-                setVehicleForm(vehicle);
-                setIsEditVehicleModalOpen(true);
+                handleOpenVehicleEditor();
               }}
               className="px-3.5 py-1.5 rounded-lg bg-[#142247] hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-700/40 text-xs font-semibold flex items-center gap-1.5 transition-all"
             >
@@ -1850,20 +1698,28 @@ export default function App() {
                   <div className="space-y-3">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-semibold">
                       <Car className="w-3.5 h-3.5" />
-                      <span>{vehicle.brand} • Garagem Principal</span>
+                      <span>{vehicle.brand || 'Veículo não cadastrado'} • Garagem Principal</span>
                     </div>
 
                     <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                      {vehicle.model}
+                      {vehicle.model || 'Cadastre seu veículo'}
                     </h1>
 
                     <p className="text-sm text-slate-300 max-w-xl font-normal leading-relaxed">
-                      {vehicle.version} • Cor {vehicle.color} • Tanque com {vehicle.tankCapacity} Litros
+                      {vehicle.model ? (
+                        <>
+                          {vehicle.version}
+                          {vehicle.color && ` • Cor ${vehicle.color}`}
+                          {vehicle.tankCapacity > 0 && ` • Tanque com ${vehicle.tankCapacity} Litros`}
+                        </>
+                      ) : (
+                        'Preencha a ficha do seu carro para começar.'
+                      )}
                     </p>
 
                     <div className="flex flex-wrap items-center gap-3 pt-1">
                       <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#14234c] border border-blue-800/50 text-xs font-mono font-bold text-blue-300">
-                        <span>Placa:</span> {vehicle.plate}
+                        <span>Placa:</span> {vehicle.plate || '—'}
                       </div>
                       <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#14234c] border border-blue-800/50 text-xs text-slate-300">
                         <Gauge className="w-3.5 h-3.5 text-blue-400" />
@@ -1894,8 +1750,7 @@ export default function App() {
                     </button>
                     <button
                       onClick={() => {
-                        setVehicleForm(vehicle);
-                        setIsEditVehicleModalOpen(true);
+                        handleOpenVehicleEditor();
                       }}
                       className="px-4 py-2 rounded-xl bg-transparent hover:bg-[#131f40] text-slate-300 hover:text-white text-xs font-medium flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                     >
@@ -1988,6 +1843,11 @@ export default function App() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
+                  {reminders.length === 0 && (
+                    <div className="col-span-full p-6 text-center rounded-xl bg-[#121c3b] border border-blue-900/30 text-slate-400">
+                      Nenhum lembrete cadastrado. Adicione um para acompanhar seus vencimentos.
+                    </div>
+                  )}
                   {reminders.map((rem) => {
                     const daysLeft = getDaysDifference(rem.dueDate);
                     const isUrgent = daysLeft <= 15 && !rem.isPaid;
@@ -2407,9 +2267,15 @@ export default function App() {
                 {filteredMaintenances.length === 0 ? (
                   <div className="p-12 text-center rounded-2xl bg-[#0f1936] border border-blue-900/40 text-slate-400">
                     <Wrench className="w-12 h-12 text-blue-500/30 mx-auto mb-3" />
-                    <p className="text-sm font-semibold text-white">Nenhuma manutenção encontrada.</p>
+                    <p className="text-sm font-semibold text-white">
+                      {maintenances.length === 0
+                        ? 'Nenhuma manutenção registrada ainda.'
+                        : 'Nenhuma manutenção encontrada.'}
+                    </p>
                     <p className="text-xs text-slate-400 mt-1">
-                      Ajuste os filtros ou adicione um novo registro de serviço.
+                      {maintenances.length === 0
+                        ? 'Adicione o primeiro serviço para começar seu histórico.'
+                        : 'Ajuste os filtros ou adicione um novo registro de serviço.'}
                     </p>
                   </div>
                 ) : (
@@ -2545,6 +2411,15 @@ export default function App() {
 
               {/* Scheduled Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {scheduledServices.length === 0 && (
+                  <div className="col-span-full p-12 text-center rounded-2xl bg-[#0f1936] border border-blue-900/40 text-slate-400">
+                    <Calendar className="w-12 h-12 text-blue-500/30 mx-auto mb-3" />
+                    <p className="text-sm font-semibold text-white">Nenhuma manutenção agendada.</p>
+                    <p className="text-xs text-slate-400 mt-1">
+                      Agende a primeira revisão para acompanhar os próximos serviços.
+                    </p>
+                  </div>
+                )}
                 {scheduledServices.map((sched) => {
                   const kmLeft = sched.targetMileage
                     ? sched.targetMileage - vehicle.currentMileage
@@ -3368,6 +3243,7 @@ export default function App() {
                   <input
                     type="text"
                     required
+                    placeholder="Ex: Chevrolet"
                     value={vehicleForm.brand}
                     onChange={(e) => setVehicleForm({ ...vehicleForm, brand: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3378,6 +3254,7 @@ export default function App() {
                   <input
                     type="text"
                     required
+                    placeholder="Ex: Chevrolet Onix"
                     value={vehicleForm.model}
                     onChange={(e) => setVehicleForm({ ...vehicleForm, model: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3391,7 +3268,7 @@ export default function App() {
                   <input
                     type="text"
                     required
-                    placeholder="2022/2023"
+                    placeholder="Ex: 2022/2023"
                     value={vehicleForm.year}
                     onChange={(e) => setVehicleForm({ ...vehicleForm, year: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3402,7 +3279,7 @@ export default function App() {
                   <input
                     type="text"
                     required
-                    placeholder="BRA-2E19"
+                    placeholder="Ex: ABC-1234"
                     value={vehicleForm.plate}
                     onChange={(e) => setVehicleForm({ ...vehicleForm, plate: e.target.value.toUpperCase() })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3416,13 +3293,15 @@ export default function App() {
                   <input
                     type="number"
                     required
-                    value={vehicleForm.currentMileage}
-                    onChange={(e) =>
+                    placeholder="Ex: 45000"
+                    value={vehicleMileageInput}
+                    onChange={(e) => {
+                      setVehicleMileageInput(e.target.value);
                       setVehicleForm({
                         ...vehicleForm,
                         currentMileage: parseInt(e.target.value, 10) || 0,
-                      })
-                    }
+                      });
+                    }}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
                   />
                 </div>
@@ -3456,6 +3335,7 @@ export default function App() {
                   <label className="text-slate-300 font-semibold block mb-1">Cor</label>
                   <input
                     type="text"
+                    placeholder="Ex: Prata"
                     value={vehicleForm.color}
                     onChange={(e) => setVehicleForm({ ...vehicleForm, color: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3485,11 +3365,12 @@ export default function App() {
                   <label className="text-slate-300 font-semibold block mb-1">Tanque (Litros)</label>
                   <input
                     type="number"
-                    value={vehicleForm.tankCapacity}
+                    placeholder="Ex: 50"
+                    value={vehicleForm.tankCapacity || ''}
                     onChange={(e) =>
                       setVehicleForm({
                         ...vehicleForm,
-                        tankCapacity: parseInt(e.target.value, 10) || 50,
+                        tankCapacity: parseInt(e.target.value, 10) || 0,
                       })
                     }
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3550,7 +3431,7 @@ export default function App() {
                   <input
                     type="text"
                     required
-                    placeholder="Shell, Ipiranga, BR..."
+                    placeholder="Ex: Shell, Ipiranga, BR"
                     value={newFuel.gasStation}
                     onChange={(e) => setNewFuel({ ...newFuel, gasStation: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3583,6 +3464,7 @@ export default function App() {
                   <input
                     type="number"
                     required
+                    placeholder="Ex: 45000"
                     value={newFuel.mileage}
                     onChange={(e) => setNewFuel({ ...newFuel, mileage: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3597,7 +3479,7 @@ export default function App() {
                     type="number"
                     step="0.01"
                     required
-                    placeholder="250.00"
+                    placeholder="Ex: 250.00"
                     value={newFuel.totalPrice}
                     onChange={(e) => setNewFuel({ ...newFuel, totalPrice: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3609,7 +3491,7 @@ export default function App() {
                     type="number"
                     step="0.01"
                     required
-                    placeholder="42.50"
+                    placeholder="Ex: 42.50"
                     value={newFuel.liters}
                     onChange={(e) => setNewFuel({ ...newFuel, liters: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3694,6 +3576,7 @@ export default function App() {
                   <input
                     type="number"
                     required
+                    placeholder="Ex: 45.000"
                     value={newMaint.mileage}
                     onChange={(e) => setNewMaint({ ...newMaint, mileage: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3766,7 +3649,7 @@ export default function App() {
                   <input
                     type="number"
                     step="0.01"
-                    placeholder="0.00"
+                    placeholder="Ex: 350.00"
                     value={newMaint.partsCost}
                     onChange={(e) => setNewMaint({ ...newMaint, partsCost: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3777,7 +3660,7 @@ export default function App() {
                   <input
                     type="number"
                     step="0.01"
-                    placeholder="0.00"
+                    placeholder="Ex: 150.00"
                     value={newMaint.laborCost}
                     onChange={(e) => setNewMaint({ ...newMaint, laborCost: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -3800,7 +3683,7 @@ export default function App() {
                   <label className="text-slate-300 font-semibold block mb-1">Garantia Oferecida</label>
                   <input
                     type="text"
-                    placeholder="90 dias ou 5.000 km"
+                    placeholder="Ex: 90 dias ou 5.000 km"
                     value={newMaint.warrantyPeriod}
                     onChange={(e) => setNewMaint({ ...newMaint, warrantyPeriod: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white focus:outline-none focus:border-blue-500"
@@ -3862,6 +3745,7 @@ export default function App() {
                   <label className="text-slate-300 font-semibold block mb-1">Quilometragem Alvo</label>
                   <input
                     type="number"
+                    placeholder="Ex: 50000"
                     value={newSched.targetMileage}
                     onChange={(e) => setNewSched({ ...newSched, targetMileage: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -4019,7 +3903,7 @@ export default function App() {
                     type="number"
                     step="0.01"
                     required
-                    placeholder="1200.00"
+                    placeholder="Ex: 1200.00"
                     value={newMod.cost}
                     onChange={(e) => setNewMod({ ...newMod, cost: e.target.value })}
                     className="w-full px-3 py-2 rounded-lg bg-[#121c3b] border border-blue-900/60 text-white font-mono focus:outline-none focus:border-blue-500"
@@ -4148,7 +4032,7 @@ export default function App() {
                 <input
                   type="number"
                   step="0.01"
-                  placeholder="0.00"
+                  placeholder="Ex: 250.00"
                   value={newReminder.amount || ''}
                   onChange={(e) =>
                     setNewReminder({ ...newReminder, amount: parseFloat(e.target.value) || 0 })
