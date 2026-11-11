@@ -1,0 +1,6 @@
+{
+  "name": "Mão na Roda",
+  "description": "O seu assistente automotivo inteligente. Gestão completa de manutenções, abastecimentos, revisões e consulta veicular com IA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
